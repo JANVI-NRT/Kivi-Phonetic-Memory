@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    color: #222;
+}
+
+header {
+    background: #222;
+    color: white;
+    padding: 24px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 6px 0 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+button {
+    margin-top: 16px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header button {
+    margin-top: 0;
+}
+
+.output {
+    margin-top: 20px;
+    padding: 16px;
+    background: #f0f0f0;
+    border-radius: 6px;
+}
+
+#memoryAwareText {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.memory-item {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+.memory-item:last-child {
+    border-bottom: none;
+}
+
+.decision {
+    padding: 12px;
+    margin: 8px 0;
+    background: #f5f5f5;
+    border-radius: 6px;
+}
+
+.danger-card {
+    border: 1px solid #ddd;
+}
+
+button.danger {
+    background: #b00020;
+}

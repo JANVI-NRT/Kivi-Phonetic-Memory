@@ -1,6 +1,10 @@
 from fastapi import Depends, FastAPI
 from sqlalchemy.orm import Session
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
+
 from app.models import Memory, Observation
 from app.models import Memory
 from app.database import get_db
@@ -22,11 +26,13 @@ from app.schemas import (
 from app.services.formatting_service import format_with_memory
 
 app = FastAPI(title="Kivi Phonetic Memory")
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 
+from fastapi.responses import FileResponse
 @app.get("/")
 def root():
-    return {"message": "Kivi backend is running"}
+    return FileResponse("app/static/index.html")
 
 
 @app.post("/memories", response_model=MemoryResponse)
@@ -73,7 +79,7 @@ def decide_memory(
         observed_form=q,
     )
 
-    decision = decide_memory_intervention(candidates)
+    decision = decide_memory_intervention(candidates,q)
 
     return {
         "observed_form": q,
@@ -86,9 +92,10 @@ def decide_memory(
                 "phonetic_score": round(phonetic_score, 2),
                 "memory_confidence": memory.confidence,
                 "evidence_count": memory.evidence_count,
-                "best_form": best_form,
+                "matched_form": matched_form,
+                "direct_evidence": direct_evidence,
             }
-            for memory, fuzzy_score, phonetic_score in candidates
+            for memory, fuzzy_score, phonetic_score, matched_form, direct_evidence in candidates
         ],
     }
     

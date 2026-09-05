@@ -74,7 +74,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 355.314,
+      "latency_ms": 1231.527,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -100,7 +100,7 @@
           "confidence": 0.786,
           "similarity_score": 90.91,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity to the stored preferred form."
         }
       ],
       "trace": [
@@ -122,7 +122,7 @@
           "confidence": 0.786,
           "similarity_score": 90.91,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity to the stored preferred form."
         },
         {
           "observed_form": "tomorrow",
@@ -152,7 +152,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 7.37,
+      "latency_ms": 7.899,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -219,7 +219,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 5.498,
+      "latency_ms": 4.379,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -245,7 +245,7 @@
           "confidence": 0.778,
           "similarity_score": 89.67,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity to the stored preferred form."
         }
       ],
       "trace": [
@@ -267,7 +267,7 @@
           "confidence": 0.778,
           "similarity_score": 89.67,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity to the stored preferred form."
         },
         {
           "observed_form": "today",
@@ -297,7 +297,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 5.667,
+      "latency_ms": 14.64,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -364,7 +364,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 2.603,
+      "latency_ms": 3.748,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -416,7 +416,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 3.954,
+      "latency_ms": 4.566,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -442,7 +442,7 @@
           "confidence": 0.85,
           "similarity_score": 100.0,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity supported by directly learned evidence."
         },
         {
           "observed_form": "Kartik",
@@ -452,7 +452,7 @@
           "confidence": 0.85,
           "similarity_score": 100.0,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity supported by directly learned evidence."
         }
       ],
       "trace": [
@@ -474,7 +474,7 @@
           "confidence": 0.85,
           "similarity_score": 100.0,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity supported by directly learned evidence."
         },
         {
           "observed_form": "to",
@@ -504,7 +504,7 @@
           "confidence": 0.85,
           "similarity_score": 100.0,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity supported by directly learned evidence."
         }
       ],
       "alignment": [
@@ -534,7 +534,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 5.336,
+      "latency_ms": 6.644,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -631,7 +631,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 6.721,
+      "latency_ms": 4.933,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -728,7 +728,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 4.784,
+      "latency_ms": 9.556,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -754,7 +754,7 @@
           "confidence": 0.85,
           "similarity_score": 100.0,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity supported by directly learned evidence."
         }
       ],
       "trace": [
@@ -776,7 +776,7 @@
           "confidence": 0.85,
           "similarity_score": 100.0,
           "margin": null,
-          "reason": "Strong similarity supported by stored memory evidence."
+          "reason": "Strong similarity supported by directly learned evidence."
         },
         {
           "observed_form": "for",
@@ -836,14 +836,14 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 7.236,
+      "latency_ms": 6.962,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
     }
   ],
-  "average_latency_ms": 40.448,
-  "p95_latency_ms": 355.314,
+  "average_latency_ms": 129.485,
+  "p95_latency_ms": 1231.527,
   "model_calls": 0,
   "embedding_calls": 0,
   "estimated_cost": 0.0

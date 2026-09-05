@@ -399,7 +399,11 @@ def decide_memory_intervention(
         "similarity_score": round(best_similarity, 2),
         "margin": round(margin, 2) if margin is not None else None,
         "direct_evidence": direct_evidence,
-        "reason": "Strong similarity supported by stored memory evidence.",
+        "reason":  (
+            "Strong similarity supported by directly learned evidence."
+            if direct_evidence
+            else "Strong similarity to the stored preferred form."
+        ),
         
     }
 

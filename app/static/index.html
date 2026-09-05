@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kivi — Phonetic Memory</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Kivi</h1>
+        <p>Phonetic Memory System</p>
+    </header>
+
+    <main>
+
+        <!-- Learn Memory -->
+        <section class="card">
+            <h2>Teach Kivi</h2>
+
+            <label>Spoken form</label>
+            <input id="spokenForm" placeholder="e.g. Rahit">
+
+            <label>Preferred form</label>
+            <input id="preferredForm" placeholder="e.g. Rohit">
+
+            <label>Context</label>
+            <input id="context" placeholder="e.g. person name">
+
+            <label>Language</label>
+            <input id="language" value="en">
+
+            <button onclick="learnMemory()">Teach Kivi</button>
+
+            <p id="learnResult"></p>
+        </section>
+
+
+        <!-- Memory State -->
+        <section class="card">
+            <div class="section-header">
+                <h2>Memory State</h2>
+                <button onclick="loadMemories()">Refresh</button>
+            </div>
+
+            <div id="memoryList">
+                Loading memories...
+            </div>
+        </section>
+
+
+        <!-- Formatting -->
+        <section class="card">
+            <h2>Format Text</h2>
+
+            <label>ASR output</label>
+            <textarea id="asrText"
+                placeholder="e.g. Ask Rahit to review the report."></textarea>
+
+            <label>Formatted output</label>
+            <textarea id="formattedText"
+                placeholder="e.g. Ask Rahit to review the report."></textarea>
+
+            <button onclick="formatText()">Run Kivi</button>
+
+            <div class="output">
+                <h3>Memory-aware output</h3>
+                <div id="memoryAwareText">
+                    —
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Decisions -->
+        <section class="card">
+            <h2>Decision Trace</h2>
+
+            <div id="decisions">
+                No decisions yet.
+            </div>
+        </section>
+
+
+        <!-- Reset -->
+        <section class="card danger-card">
+            <h2>Reset</h2>
+
+            <p>
+                Remove all stored memories and observations.
+            </p>
+
+            <button class="danger" onclick="resetMemories()">
+                Reset Memory
+            </button>
+
+            <p id="resetResult"></p>
+        </section>
+
+    </main>
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
