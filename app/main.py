@@ -1,0 +1,145 @@
+from fastapi import Depends, FastAPI
+from sqlalchemy.orm import Session
+
+from app.models import Memory, Observation
+from app.models import Memory
+from app.database import get_db
+from app.schemas import MemoryCreate, MemoryResponse
+from app.services.memory_service import (
+    decide_memory_intervention,
+    find_candidates,
+    learn_memory,
+)
+
+from app.schemas import (
+    FormatRequest,
+    FormatResponse,
+    MemoryCreate,
+    MemoryResponse,
+    ObservationCreate
+)   
+
+from app.services.formatting_service import format_with_memory
+
+app = FastAPI(title="Kivi Phonetic Memory")
+
+
+@app.get("/")
+def root():
+    return {"message": "Kivi backend is running"}
+
+
+@app.post("/memories", response_model=MemoryResponse)
+def create_memory(
+    memory: MemoryCreate,
+    db: Session = Depends(get_db),
+):
+    return learn_memory(
+        db=db,
+        spoken_form=memory.spoken_form,
+        preferred_form=memory.preferred_form,
+        context=memory.context,
+        language=memory.language,
+    )
+    
+@app.get("/memories/search")
+def search_memories(
+    q: str,
+    db: Session = Depends(get_db),
+):
+    candidates = find_candidates(
+        db=db,
+        observed_form=q,
+    )
+
+    return [
+    {
+        "id": memory.id,
+        "preferred_form": memory.preferred_form,
+        "fuzzy_score": round(fuzzy_score, 2),
+        "phonetic_score": round(phonetic_score, 2),
+    }
+    for memory, fuzzy_score, phonetic_score in candidates
+]
+    
+
+@app.get("/memories/decide")
+def decide_memory(
+    q: str,
+    db: Session = Depends(get_db),
+):
+    candidates = find_candidates(
+        db=db,
+        observed_form=q,
+    )
+
+    decision = decide_memory_intervention(candidates)
+
+    return {
+        "observed_form": q,
+        "decision": decision,
+        "candidates": [
+            {
+                "id": memory.id,
+                "preferred_form": memory.preferred_form,
+                "fuzzy_score": round(fuzzy_score, 2),
+                "phonetic_score": round(phonetic_score, 2),
+                "memory_confidence": memory.confidence,
+                "evidence_count": memory.evidence_count,
+                "best_form": best_form,
+            }
+            for memory, fuzzy_score, phonetic_score in candidates
+        ],
+    }
+    
+@app.post("/format", response_model=FormatResponse)
+def format_text(
+    request: FormatRequest,
+    db: Session = Depends(get_db),
+):
+    result = format_with_memory(
+        db=db,
+        asr_text=request.asr_text,
+        formatted_text=request.formatted_text,
+    )
+
+    return {
+        "asr_text": request.asr_text,
+        "formatted_text": request.formatted_text,
+        "memory_aware_text": result["memory_aware_text"],
+        "decisions": result["decisions"],
+        "trace": result["trace"],
+        "alignment": result["alignment"],
+    }
+    
+@app.get("/memories", response_model=list[MemoryResponse])
+def get_memories(
+    db: Session = Depends(get_db),
+):
+    return db.query(Memory).order_by(Memory.id).all()
+
+@app.post("/memories/reset")
+def reset_memories(
+    db: Session = Depends(get_db),
+):
+    db.query(Observation).delete()
+    db.query(Memory).delete()
+    db.commit()
+
+    return {
+        "message": "All memories and observations have been reset."
+    }
+    
+@app.post("/observations", response_model=MemoryResponse)
+def create_observation(
+    observation: ObservationCreate,
+    db: Session = Depends(get_db),
+):
+    return learn_memory(
+        db=db,
+        spoken_form=observation.observed_form,
+        preferred_form=observation.preferred_form,
+        context=observation.context,
+        language=observation.language,
+    )
+    

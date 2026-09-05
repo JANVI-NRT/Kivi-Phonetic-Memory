@@ -1,0 +1,1920 @@
+{
+  "dataset": "cases.json",
+  "total_cases": 20,
+  "passed_cases": 20,
+  "failed_cases": 0,
+  "accuracy": 1.0,
+  "expected_interventions": 9,
+  "actual_interventions": 9,
+  "correct_interventions": 9,
+  "false_interventions": 0,
+  "missed_interventions": 0,
+  "intervention_precision": 1.0,
+  "intervention_recall": 1.0,
+  "results": [
+    {
+      "case_id": "exact_001",
+      "description": "Exact personal name should not be changed",
+      "asr_text": "Ask Rohit to send the report.",
+      "formatted_text": "Ask Rohit to send the report.",
+      "expected_text": "Ask Rohit to send the report.",
+      "actual_text": "Ask Rohit to send the report.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rohit",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Formatted text already matches the preferred form exactly."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "send",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "report",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Ask",
+          "formatted_token": "Ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rohit",
+          "formatted_token": "Rohit",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "send",
+          "formatted_token": "send",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "report",
+          "formatted_token": "report",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 653.451,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "phonetic_001",
+      "description": "Phonetic variation should recover personal name",
+      "asr_text": "Ask Rahit to send the report.",
+      "formatted_text": "Ask Rahit to send the report.",
+      "expected_text": "Ask Rohit to send the report.",
+      "actual_text": "Ask Rohit to send the report.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Rahit",
+          "replacement": "Rohit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rahit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "send",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "report",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Ask",
+          "formatted_token": "Ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rahit",
+          "formatted_token": "Rahit",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "send",
+          "formatted_token": "send",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "report",
+          "formatted_token": "report",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 9.366,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "phonetic_002",
+      "description": "Personal spelling preference should be recovered",
+      "asr_text": "Send it to Aditya.",
+      "formatted_text": "Send it to Aditya.",
+      "expected_text": "Send it to Aaditya.",
+      "actual_text": "Send it to Aaditya.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Aditya",
+          "replacement": "Aaditya",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Send",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "it",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Aditya",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Send",
+          "formatted_token": "Send",
+          "match": "exact"
+        },
+        {
+          "asr_token": "it",
+          "formatted_token": "it",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Aditya",
+          "formatted_token": "Aditya",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 4.773,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "unknown_001",
+      "description": "Unknown name should not trigger intervention",
+      "asr_text": "Ask Rahul to send the report.",
+      "formatted_text": "Ask Rahul to send the report.",
+      "expected_text": "Ask Rahul to send the report.",
+      "actual_text": "Ask Rahul to send the report.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rahul",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "send",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "report",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Ask",
+          "formatted_token": "Ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rahul",
+          "formatted_token": "Rahul",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "send",
+          "formatted_token": "send",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "report",
+          "formatted_token": "report",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 5.057,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "ambiguity_001",
+      "description": "Similar memories should cause deliberate non-intervention",
+      "asr_text": "Ask Rohat to send the report.",
+      "formatted_text": "Ask Rohat to send the report.",
+      "expected_text": "Ask Rohat to send the report.",
+      "actual_text": "Ask Rohat to send the report.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rohat",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.719,
+          "similarity_score": 81.33,
+          "margin": 0.0,
+          "reason": "Multiple memory candidates are similarly strong."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "send",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "report",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Ask",
+          "formatted_token": "Ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rohat",
+          "formatted_token": "Rohat",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "send",
+          "formatted_token": "send",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "report",
+          "formatted_token": "report",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 9.466,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_006",
+      "description": "Case differences should not trigger intervention",
+      "asr_text": "Ask rohit to call me.",
+      "formatted_text": "Ask rohit to call me.",
+      "expected_text": "Ask rohit to call me.",
+      "actual_text": "Ask rohit to call me.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "rohit",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Formatted text already matches the preferred form exactly."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "call",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "me",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Ask",
+          "formatted_token": "Ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "rohit",
+          "formatted_token": "rohit",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "call",
+          "formatted_token": "call",
+          "match": "exact"
+        },
+        {
+          "asr_token": "me",
+          "formatted_token": "me",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 5.157,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_007",
+      "description": "Strong phonetic variation",
+      "asr_text": "Call Rahit tomorrow.",
+      "formatted_text": "Call Rahit tomorrow.",
+      "expected_text": "Call Rohit tomorrow.",
+      "actual_text": "Call Rohit tomorrow.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Rahit",
+          "replacement": "Rohit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Call",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rahit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "tomorrow",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Call",
+          "formatted_token": "Call",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rahit",
+          "formatted_token": "Rahit",
+          "match": "exact"
+        },
+        {
+          "asr_token": "tomorrow",
+          "formatted_token": "tomorrow",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 2.962,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_008",
+      "description": "Unknown person should remain unchanged",
+      "asr_text": "Call Rakesh tomorrow.",
+      "formatted_text": "Call Rakesh tomorrow.",
+      "expected_text": "Call Rakesh tomorrow.",
+      "actual_text": "Call Rakesh tomorrow.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Call",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rakesh",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "tomorrow",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Call",
+          "formatted_token": "Call",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rakesh",
+          "formatted_token": "Rakesh",
+          "match": "exact"
+        },
+        {
+          "asr_token": "tomorrow",
+          "formatted_token": "tomorrow",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 4.903,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_009",
+      "description": "Similar but distinct name",
+      "asr_text": "Call Rohan tomorrow.",
+      "formatted_text": "Call Rohan tomorrow.",
+      "expected_text": "Call Rohan tomorrow.",
+      "actual_text": "Call Rohan tomorrow.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Call",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rohan",
+          "decision": "do_not_intervene",
+          "memory_id": 2,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Formatted text already matches the preferred form exactly."
+        },
+        {
+          "observed_form": "tomorrow",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Call",
+          "formatted_token": "Call",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rohan",
+          "formatted_token": "Rohan",
+          "match": "exact"
+        },
+        {
+          "asr_token": "tomorrow",
+          "formatted_token": "tomorrow",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 3.326,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_010",
+      "description": "Two personal memories in one sentence",
+      "asr_text": "Ask Rahit to send it to Aditya.",
+      "formatted_text": "Ask Rahit to send it to Aditya.",
+      "expected_text": "Ask Rohit to send it to Aaditya.",
+      "actual_text": "Ask Rohit to send it to Aaditya.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Rahit",
+          "replacement": "Rohit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "Aditya",
+          "replacement": "Aaditya",
+          "decision": "intervene",
+          "memory_id": 2,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rahit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "send",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "it",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": false,
+          "confidence": 0.55,
+          "similarity_score": 57.14,
+          "margin": null,
+          "reason": "Similarity is too weak."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Aditya",
+          "decision": "intervene",
+          "memory_id": 2,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Ask",
+          "formatted_token": "Ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rahit",
+          "formatted_token": "Rahit",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "send",
+          "formatted_token": "send",
+          "match": "exact"
+        },
+        {
+          "asr_token": "it",
+          "formatted_token": "it",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Aditya",
+          "formatted_token": "Aditya",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 6.031,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_011",
+      "description": "Very similar sounding but unknown name",
+      "asr_text": "Call Mohit tomorrow.",
+      "formatted_text": "Call Mohit tomorrow.",
+      "expected_text": "Call Mohit tomorrow.",
+      "actual_text": "Call Mohit tomorrow.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Call",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Mohit",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": false,
+          "confidence": 0.719,
+          "similarity_score": 81.33,
+          "margin": null,
+          "reason": "Similarity is strong, but this observed form has not been learned as evidence for the memory."
+        },
+        {
+          "observed_form": "tomorrow",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Call",
+          "formatted_token": "Call",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Mohit",
+          "formatted_token": "Mohit",
+          "match": "exact"
+        },
+        {
+          "asr_token": "tomorrow",
+          "formatted_token": "tomorrow",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 3.655,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_012",
+      "description": "Small spelling error in personal name",
+      "asr_text": "Ask Aditya to review it.",
+      "formatted_text": "Ask Aditya to review it.",
+      "expected_text": "Ask Aaditya to review it.",
+      "actual_text": "Ask Aaditya to review it.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Aditya",
+          "replacement": "Aaditya",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.753,
+          "similarity_score": 86.15,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Aditya",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": false,
+          "confidence": 0.753,
+          "similarity_score": 86.15,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "review",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "it",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Ask",
+          "formatted_token": "Ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Aditya",
+          "formatted_token": "Aditya",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "review",
+          "formatted_token": "review",
+          "match": "exact"
+        },
+        {
+          "asr_token": "it",
+          "formatted_token": "it",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 6.532,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_013",
+      "description": "Common word should not be replaced by personal memory",
+      "asr_text": "Send the report.",
+      "formatted_text": "Send the report.",
+      "expected_text": "Send the report.",
+      "actual_text": "Send the report.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Send",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "report",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Formatted text already matches the preferred form exactly."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Send",
+          "formatted_token": "Send",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "report",
+          "formatted_token": "report",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 2.49,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_014",
+      "description": "Known personal term with punctuation",
+      "asr_text": "Email Rahit.",
+      "formatted_text": "Email Rahit.",
+      "expected_text": "Email Rohit.",
+      "actual_text": "Email Rohit.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Rahit",
+          "replacement": "Rohit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Email",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rahit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Email",
+          "formatted_token": "Email",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rahit",
+          "formatted_token": "Rahit",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 4.725,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_015",
+      "description": "Completely unrelated word",
+      "asr_text": "Send the document.",
+      "formatted_text": "Send the document.",
+      "expected_text": "Send the document.",
+      "actual_text": "Send the document.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Send",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "document",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Send",
+          "formatted_token": "Send",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "document",
+          "formatted_token": "document",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 4.262,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_016",
+      "description": "Two distinct known names in one sentence",
+      "asr_text": "Ask Rahit about Rohan.",
+      "formatted_text": "Ask Rahit about Rohan.",
+      "expected_text": "Ask Rohit about Rohan.",
+      "actual_text": "Ask Rohit about Rohan.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Rahit",
+          "replacement": "Rohit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rahit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "about",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rohan",
+          "decision": "do_not_intervene",
+          "memory_id": 2,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Formatted text already matches the preferred form exactly."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Ask",
+          "formatted_token": "Ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rahit",
+          "formatted_token": "Rahit",
+          "match": "exact"
+        },
+        {
+          "asr_token": "about",
+          "formatted_token": "about",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rohan",
+          "formatted_token": "Rohan",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 7.074,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_017",
+      "description": "Exact known name should never be changed",
+      "asr_text": "Email Aaditya today.",
+      "formatted_text": "Email Aaditya today.",
+      "expected_text": "Email Aaditya today.",
+      "actual_text": "Email Aaditya today.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Email",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Aaditya",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Formatted text already matches the preferred form exactly."
+        },
+        {
+          "observed_form": "today",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Email",
+          "formatted_token": "Email",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Aaditya",
+          "formatted_token": "Aaditya",
+          "match": "exact"
+        },
+        {
+          "asr_token": "today",
+          "formatted_token": "today",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 4.696,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_018",
+      "description": "Weak similarity should not trigger memory",
+      "asr_text": "Schedule a meeting.",
+      "formatted_text": "Schedule a meeting.",
+      "expected_text": "Schedule a meeting.",
+      "actual_text": "Schedule a meeting.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Schedule",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "a",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "meeting",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Schedule",
+          "formatted_token": "Schedule",
+          "match": "exact"
+        },
+        {
+          "asr_token": "a",
+          "formatted_token": "a",
+          "match": "exact"
+        },
+        {
+          "asr_token": "meeting",
+          "formatted_token": "meeting",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 3.359,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_019",
+      "description": "Multiple words with one personal correction",
+      "asr_text": "Please ask Rahit to send the final report.",
+      "formatted_text": "Please ask Rahit to send the final report.",
+      "expected_text": "Please ask Rohit to send the final report.",
+      "actual_text": "Please ask Rohit to send the final report.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Rahit",
+          "replacement": "Rohit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Please",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rahit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "send",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "final",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "report",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Please",
+          "formatted_token": "Please",
+          "match": "exact"
+        },
+        {
+          "asr_token": "ask",
+          "formatted_token": "ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rahit",
+          "formatted_token": "Rahit",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "send",
+          "formatted_token": "send",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "final",
+          "formatted_token": "final",
+          "match": "exact"
+        },
+        {
+          "asr_token": "report",
+          "formatted_token": "report",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 8.006,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "case_020",
+      "description": "Known personal term embedded in longer sentence",
+      "asr_text": "I told Rahit about the meeting yesterday.",
+      "formatted_text": "I told Rahit about the meeting yesterday.",
+      "expected_text": "I told Rohit about the meeting yesterday.",
+      "actual_text": "I told Rohit about the meeting yesterday.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Rahit",
+          "replacement": "Rohit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "I",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "told",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Rahit",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "about",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "meeting",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "yesterday",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "I",
+          "formatted_token": "I",
+          "match": "exact"
+        },
+        {
+          "asr_token": "told",
+          "formatted_token": "told",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Rahit",
+          "formatted_token": "Rahit",
+          "match": "exact"
+        },
+        {
+          "asr_token": "about",
+          "formatted_token": "about",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "meeting",
+          "formatted_token": "meeting",
+          "match": "exact"
+        },
+        {
+          "asr_token": "yesterday",
+          "formatted_token": "yesterday",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 6.456,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    }
+  ],
+  "average_latency_ms": 37.787,
+  "p95_latency_ms": 653.451,
+  "model_calls": 0,
+  "embedding_calls": 0,
+  "estimated_cost": 0.0
+}

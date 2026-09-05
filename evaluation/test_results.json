@@ -1,0 +1,850 @@
+{
+  "dataset": "test_cases.json",
+  "total_cases": 10,
+  "passed_cases": 10,
+  "failed_cases": 0,
+  "accuracy": 1.0,
+  "expected_interventions": 4,
+  "actual_interventions": 4,
+  "correct_interventions": 4,
+  "false_interventions": 0,
+  "missed_interventions": 0,
+  "intervention_precision": 1.0,
+  "intervention_recall": 1.0,
+  "results": [
+    {
+      "case_id": "test_001",
+      "description": "Exact known person name",
+      "asr_text": "Call Sanjay tomorrow.",
+      "formatted_text": "Call Sanjay tomorrow.",
+      "expected_text": "Call Sanjay tomorrow.",
+      "actual_text": "Call Sanjay tomorrow.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Call",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Sanjay",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Formatted text already matches the preferred form exactly."
+        },
+        {
+          "observed_form": "tomorrow",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Call",
+          "formatted_token": "Call",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Sanjay",
+          "formatted_token": "Sanjay",
+          "match": "exact"
+        },
+        {
+          "asr_token": "tomorrow",
+          "formatted_token": "tomorrow",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 355.314,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "test_002",
+      "description": "Learned phonetic variant",
+      "asr_text": "Call Nikil tomorrow.",
+      "formatted_text": "Call Nikil tomorrow.",
+      "expected_text": "Call Nikhil tomorrow.",
+      "actual_text": "Call Nikhil tomorrow.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Nikil",
+          "replacement": "Nikhil",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.786,
+          "similarity_score": 90.91,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Call",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Nikil",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": false,
+          "confidence": 0.786,
+          "similarity_score": 90.91,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "tomorrow",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Call",
+          "formatted_token": "Call",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Nikil",
+          "formatted_token": "Nikil",
+          "match": "exact"
+        },
+        {
+          "asr_token": "tomorrow",
+          "formatted_token": "tomorrow",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 7.37,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "test_003",
+      "description": "Unseen similar person name",
+      "asr_text": "Call Mihil tomorrow.",
+      "formatted_text": "Call Mihil tomorrow.",
+      "expected_text": "Call Mihil tomorrow.",
+      "actual_text": "Call Mihil tomorrow.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Call",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Mihil",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": false,
+          "confidence": 0.659,
+          "similarity_score": 72.73,
+          "margin": null,
+          "reason": "Similarity is strong, but this observed form has not been learned as evidence for the memory."
+        },
+        {
+          "observed_form": "tomorrow",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Call",
+          "formatted_token": "Call",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Mihil",
+          "formatted_token": "Mihil",
+          "match": "exact"
+        },
+        {
+          "asr_token": "tomorrow",
+          "formatted_token": "tomorrow",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 5.498,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "test_004",
+      "description": "Learned variant of another name",
+      "asr_text": "Email Kartik today.",
+      "formatted_text": "Email Kartik today.",
+      "expected_text": "Email Karthik today.",
+      "actual_text": "Email Karthik today.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Kartik",
+          "replacement": "Karthik",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.778,
+          "similarity_score": 89.67,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Email",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Kartik",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": false,
+          "confidence": 0.778,
+          "similarity_score": 89.67,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "today",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Email",
+          "formatted_token": "Email",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Kartik",
+          "formatted_token": "Kartik",
+          "match": "exact"
+        },
+        {
+          "asr_token": "today",
+          "formatted_token": "today",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 5.667,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "test_005",
+      "description": "Unknown similar name should remain unchanged",
+      "asr_text": "Email Kartikesh today.",
+      "formatted_text": "Email Kartikesh today.",
+      "expected_text": "Email Kartikesh today.",
+      "actual_text": "Email Kartikesh today.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Email",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Kartikesh",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": false,
+          "confidence": 0.663,
+          "similarity_score": 73.24,
+          "margin": null,
+          "reason": "Similarity is strong, but this observed form has not been learned as evidence for the memory."
+        },
+        {
+          "observed_form": "today",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Email",
+          "formatted_token": "Email",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Kartikesh",
+          "formatted_token": "Kartikesh",
+          "match": "exact"
+        },
+        {
+          "asr_token": "today",
+          "formatted_token": "today",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 2.603,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "test_006",
+      "description": "Ambiguous similar names",
+      "asr_text": "Call Amil.",
+      "formatted_text": "Call Amil.",
+      "expected_text": "Call Amil.",
+      "actual_text": "Call Amil.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Call",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Amil",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.675,
+          "similarity_score": 75.0,
+          "margin": 0.0,
+          "reason": "Multiple memory candidates are similarly strong."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Call",
+          "formatted_token": "Call",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Amil",
+          "formatted_token": "Amil",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 3.954,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "test_007",
+      "description": "Multiple learned variants in one sentence",
+      "asr_text": "Ask Nikil to meet Kartik.",
+      "formatted_text": "Ask Nikil to meet Kartik.",
+      "expected_text": "Ask Nikhil to meet Karthik.",
+      "actual_text": "Ask Nikhil to meet Karthik.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Nikil",
+          "replacement": "Nikhil",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "Kartik",
+          "replacement": "Karthik",
+          "decision": "intervene",
+          "memory_id": 2,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Ask",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Nikil",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "to",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "meet",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Kartik",
+          "decision": "intervene",
+          "memory_id": 2,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Ask",
+          "formatted_token": "Ask",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Nikil",
+          "formatted_token": "Nikil",
+          "match": "exact"
+        },
+        {
+          "asr_token": "to",
+          "formatted_token": "to",
+          "match": "exact"
+        },
+        {
+          "asr_token": "meet",
+          "formatted_token": "meet",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Kartik",
+          "formatted_token": "Kartik",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 5.336,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "test_008",
+      "description": "Unrelated sentence despite personal memory",
+      "asr_text": "The weather is pleasant today.",
+      "formatted_text": "The weather is pleasant today.",
+      "expected_text": "The weather is pleasant today.",
+      "actual_text": "The weather is pleasant today.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "The",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "weather",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "is",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "pleasant",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "today",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "The",
+          "formatted_token": "The",
+          "match": "exact"
+        },
+        {
+          "asr_token": "weather",
+          "formatted_token": "weather",
+          "match": "exact"
+        },
+        {
+          "asr_token": "is",
+          "formatted_token": "is",
+          "match": "exact"
+        },
+        {
+          "asr_token": "pleasant",
+          "formatted_token": "pleasant",
+          "match": "exact"
+        },
+        {
+          "asr_token": "today",
+          "formatted_token": "today",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 6.721,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "test_009",
+      "description": "Exact known technical term",
+      "asr_text": "Use PostgreSQL for the database.",
+      "formatted_text": "Use PostgreSQL for the database.",
+      "expected_text": "Use PostgreSQL for the database.",
+      "actual_text": "Use PostgreSQL for the database.",
+      "expected_decision": "do_not_intervene",
+      "actual_decision": "do_not_intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [],
+      "trace": [
+        {
+          "observed_form": "Use",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "PostgreSQL",
+          "decision": "do_not_intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Formatted text already matches the preferred form exactly."
+        },
+        {
+          "observed_form": "for",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "database",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Use",
+          "formatted_token": "Use",
+          "match": "exact"
+        },
+        {
+          "asr_token": "PostgreSQL",
+          "formatted_token": "PostgreSQL",
+          "match": "exact"
+        },
+        {
+          "asr_token": "for",
+          "formatted_token": "for",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "database",
+          "formatted_token": "database",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 4.784,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    },
+    {
+      "case_id": "test_010",
+      "description": "Learned technical pronunciation variant",
+      "asr_text": "Use Postgres for the database.",
+      "formatted_text": "Use Postgres for the database.",
+      "expected_text": "Use PostgreSQL for the database.",
+      "actual_text": "Use PostgreSQL for the database.",
+      "expected_decision": "intervene",
+      "actual_decision": "intervene",
+      "text_match": true,
+      "decision_match": true,
+      "passed": true,
+      "decisions": [
+        {
+          "observed_form": "Postgres",
+          "replacement": "PostgreSQL",
+          "decision": "intervene",
+          "memory_id": 1,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        }
+      ],
+      "trace": [
+        {
+          "observed_form": "Use",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "Postgres",
+          "decision": "intervene",
+          "memory_id": 1,
+          "direct_evidence": true,
+          "confidence": 0.85,
+          "similarity_score": 100.0,
+          "margin": null,
+          "reason": "Strong similarity supported by stored memory evidence."
+        },
+        {
+          "observed_form": "for",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "the",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        },
+        {
+          "observed_form": "database",
+          "decision": "do_not_intervene",
+          "memory_id": null,
+          "direct_evidence": false,
+          "confidence": 0.0,
+          "similarity_score": 0.0,
+          "margin": null,
+          "reason": "No memory candidates found."
+        }
+      ],
+      "alignment": [
+        {
+          "asr_token": "Use",
+          "formatted_token": "Use",
+          "match": "exact"
+        },
+        {
+          "asr_token": "Postgres",
+          "formatted_token": "Postgres",
+          "match": "exact"
+        },
+        {
+          "asr_token": "for",
+          "formatted_token": "for",
+          "match": "exact"
+        },
+        {
+          "asr_token": "the",
+          "formatted_token": "the",
+          "match": "exact"
+        },
+        {
+          "asr_token": "database",
+          "formatted_token": "database",
+          "match": "exact"
+        }
+      ],
+      "latency_ms": 7.236,
+      "model_calls": 0,
+      "embedding_calls": 0,
+      "estimated_cost": 0.0
+    }
+  ],
+  "average_latency_ms": 40.448,
+  "p95_latency_ms": 355.314,
+  "model_calls": 0,
+  "embedding_calls": 0,
+  "estimated_cost": 0.0
+}

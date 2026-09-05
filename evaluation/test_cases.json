@@ -1,0 +1,158 @@
+[
+  {
+    "case_id": "test_001",
+    "description": "Exact known person name",
+    "memory": {
+      "spoken_form": "Sanjay",
+      "preferred_form": "Sanjay",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "Call Sanjay tomorrow.",
+    "formatted_text": "Call Sanjay tomorrow.",
+    "expected_text": "Call Sanjay tomorrow.",
+    "expected_decision": "do_not_intervene"
+  },
+  {
+    "case_id": "test_002",
+    "description": "Learned phonetic variant",
+    "memory": {
+      "spoken_form": "Nikhil",
+      "preferred_form": "Nikhil",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "Call Nikil tomorrow.",
+    "formatted_text": "Call Nikil tomorrow.",
+    "expected_text": "Call Nikhil tomorrow.",
+    "expected_decision": "intervene"
+  },
+  {
+    "case_id": "test_003",
+    "description": "Unseen similar person name",
+    "memory": {
+      "spoken_form": "Nikhil",
+      "preferred_form": "Nikhil",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "Call Mihil tomorrow.",
+    "formatted_text": "Call Mihil tomorrow.",
+    "expected_text": "Call Mihil tomorrow.",
+    "expected_decision": "do_not_intervene"
+  },
+  {
+    "case_id": "test_004",
+    "description": "Learned variant of another name",
+    "memory": {
+      "spoken_form": "Karthik",
+      "preferred_form": "Karthik",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "Email Kartik today.",
+    "formatted_text": "Email Kartik today.",
+    "expected_text": "Email Karthik today.",
+    "expected_decision": "intervene"
+  },
+  {
+    "case_id": "test_005",
+    "description": "Unknown similar name should remain unchanged",
+    "memory": {
+      "spoken_form": "Karthik",
+      "preferred_form": "Karthik",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "Email Kartikesh today.",
+    "formatted_text": "Email Kartikesh today.",
+    "expected_text": "Email Kartikesh today.",
+    "expected_decision": "do_not_intervene"
+  },
+  {
+    "case_id": "test_006",
+    "description": "Ambiguous similar names",
+    "memories": [
+      {
+        "spoken_form": "Amit",
+        "preferred_form": "Amit",
+        "context": "person name",
+        "language": "en"
+      },
+      {
+        "spoken_form": "Amir",
+        "preferred_form": "Amir",
+        "context": "person name",
+        "language": "en"
+      }
+    ],
+    "asr_text": "Call Amil.",
+    "formatted_text": "Call Amil.",
+    "expected_text": "Call Amil.",
+    "expected_decision": "do_not_intervene"
+  },
+  {
+    "case_id": "test_007",
+    "description": "Multiple learned variants in one sentence",
+    "memories": [
+      {
+        "spoken_form": "Nikil",
+        "preferred_form": "Nikhil",
+        "context": "person name",
+        "language": "en"
+      },
+      {
+        "spoken_form": "Kartik",
+        "preferred_form": "Karthik",
+        "context": "person name",
+        "language": "en"
+      }
+    ],
+    "asr_text": "Ask Nikil to meet Kartik.",
+    "formatted_text": "Ask Nikil to meet Kartik.",
+    "expected_text": "Ask Nikhil to meet Karthik.",
+    "expected_decision": "intervene"
+  },
+  {
+    "case_id": "test_008",
+    "description": "Unrelated sentence despite personal memory",
+    "memory": {
+      "spoken_form": "Karthik",
+      "preferred_form": "Karthik",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "The weather is pleasant today.",
+    "formatted_text": "The weather is pleasant today.",
+    "expected_text": "The weather is pleasant today.",
+    "expected_decision": "do_not_intervene"
+  },
+  {
+    "case_id": "test_009",
+    "description": "Exact known technical term",
+    "memory": {
+      "spoken_form": "PostgreSQL",
+      "preferred_form": "PostgreSQL",
+      "context": "database technology",
+      "language": "en"
+    },
+    "asr_text": "Use PostgreSQL for the database.",
+    "formatted_text": "Use PostgreSQL for the database.",
+    "expected_text": "Use PostgreSQL for the database.",
+    "expected_decision": "do_not_intervene"
+  },
+  {
+    "case_id": "test_010",
+    "description": "Learned technical pronunciation variant",
+    "memory": {
+      "spoken_form": "Postgres",
+      "preferred_form": "PostgreSQL",
+      "context": "database technology",
+      "language": "en"
+    },
+    "asr_text": "Use Postgres for the database.",
+    "formatted_text": "Use Postgres for the database.",
+    "expected_text": "Use PostgreSQL for the database.",
+    "expected_decision": "intervene"
+  }
+]

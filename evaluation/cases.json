@@ -1,0 +1,319 @@
+[
+  {
+    "case_id": "exact_001",
+    "description": "Exact personal name should not be changed",
+    "memory": {
+      "spoken_form": "Rohit",
+      "preferred_form": "Rohit",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "Ask Rohit to send the report.",
+    "formatted_text": "Ask Rohit to send the report.",
+    "expected_text": "Ask Rohit to send the report.",
+    "expected_decision": "do_not_intervene"
+  },
+  {
+    "case_id": "phonetic_001",
+    "description": "Phonetic variation should recover personal name",
+    "memory": {
+      "spoken_form": "Rahit",
+      "preferred_form": "Rohit",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "Ask Rahit to send the report.",
+    "formatted_text": "Ask Rahit to send the report.",
+    "expected_text": "Ask Rohit to send the report.",
+    "expected_decision": "intervene"
+  },
+  {
+    "case_id": "phonetic_002",
+    "description": "Personal spelling preference should be recovered",
+    "memory": {
+      "spoken_form": "Aditya",
+      "preferred_form": "Aaditya",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "Send it to Aditya.",
+    "formatted_text": "Send it to Aditya.",
+    "expected_text": "Send it to Aaditya.",
+    "expected_decision": "intervene"
+  },
+  {
+    "case_id": "unknown_001",
+    "description": "Unknown name should not trigger intervention",
+    "memory": {
+      "spoken_form": "Rohit",
+      "preferred_form": "Rohit",
+      "context": "person name",
+      "language": "en"
+    },
+    "asr_text": "Ask Rahul to send the report.",
+    "formatted_text": "Ask Rahul to send the report.",
+    "expected_text": "Ask Rahul to send the report.",
+    "expected_decision": "do_not_intervene"
+  },
+  {
+    "case_id": "ambiguity_001",
+    "description": "Similar memories should cause deliberate non-intervention",
+    "memories": [
+      {
+        "spoken_form": "Rohit",
+        "preferred_form": "Rohit",
+        "context": "person name",
+        "language": "en"
+      },
+      {
+        "spoken_form": "Rohan",
+        "preferred_form": "Rohan",
+        "context": "person name",
+        "language": "en"
+      }
+    ],
+    "asr_text": "Ask Rohat to send the report.",
+    "formatted_text": "Ask Rohat to send the report.",
+    "expected_text": "Ask Rohat to send the report.",
+    "expected_decision": "do_not_intervene"
+  }
+
+  ,
+{
+  "case_id": "case_006",
+  "description": "Case differences should not trigger intervention",
+  "memory": {
+    "spoken_form": "Rohit",
+    "preferred_form": "Rohit",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Ask rohit to call me.",
+  "formatted_text": "Ask rohit to call me.",
+  "expected_text": "Ask rohit to call me.",
+  "expected_decision": "do_not_intervene"
+},
+{
+  "case_id": "case_007",
+  "description": "Strong phonetic variation",
+  "memory": {
+    "spoken_form": "Rahit",
+    "preferred_form": "Rohit",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Call Rahit tomorrow.",
+  "formatted_text": "Call Rahit tomorrow.",
+  "expected_text": "Call Rohit tomorrow.",
+  "expected_decision": "intervene"
+},
+{
+  "case_id": "case_008",
+  "description": "Unknown person should remain unchanged",
+  "memory": {
+    "spoken_form": "Rohit",
+    "preferred_form": "Rohit",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Call Rakesh tomorrow.",
+  "formatted_text": "Call Rakesh tomorrow.",
+  "expected_text": "Call Rakesh tomorrow.",
+  "expected_decision": "do_not_intervene"
+},
+{
+  "case_id": "case_009",
+  "description": "Similar but distinct name",
+  "memories": [
+    {
+      "spoken_form": "Rohit",
+      "preferred_form": "Rohit",
+      "context": "person name",
+      "language": "en"
+    },
+    {
+      "spoken_form": "Rohan",
+      "preferred_form": "Rohan",
+      "context": "person name",
+      "language": "en"
+    }
+  ],
+  "asr_text": "Call Rohan tomorrow.",
+  "formatted_text": "Call Rohan tomorrow.",
+  "expected_text": "Call Rohan tomorrow.",
+  "expected_decision": "do_not_intervene"
+},
+{
+  "case_id": "case_010",
+  "description": "Two personal memories in one sentence",
+  "memories": [
+    {
+      "spoken_form": "Rahit",
+      "preferred_form": "Rohit",
+      "context": "person name",
+      "language": "en"
+    },
+    {
+      "spoken_form": "Aditya",
+      "preferred_form": "Aaditya",
+      "context": "person name",
+      "language": "en"
+    }
+  ],
+  "asr_text": "Ask Rahit to send it to Aditya.",
+  "formatted_text": "Ask Rahit to send it to Aditya.",
+  "expected_text": "Ask Rohit to send it to Aaditya.",
+  "expected_decision": "intervene"
+}
+
+,
+{
+  "case_id": "case_011",
+  "description": "Very similar sounding but unknown name",
+  "memory": {
+    "spoken_form": "Rohit",
+    "preferred_form": "Rohit",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Call Mohit tomorrow.",
+  "formatted_text": "Call Mohit tomorrow.",
+  "expected_text": "Call Mohit tomorrow.",
+  "expected_decision": "do_not_intervene"
+},
+{
+  "case_id": "case_012",
+  "description": "Small spelling error in personal name",
+  "memory": {
+    "spoken_form": "Aaditya",
+    "preferred_form": "Aaditya",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Ask Aditya to review it.",
+  "formatted_text": "Ask Aditya to review it.",
+  "expected_text": "Ask Aaditya to review it.",
+  "expected_decision": "intervene"
+},
+{
+  "case_id": "case_013",
+  "description": "Common word should not be replaced by personal memory",
+  "memory": {
+    "spoken_form": "report",
+    "preferred_form": "Report",
+    "context": "document",
+    "language": "en"
+  },
+  "asr_text": "Send the report.",
+  "formatted_text": "Send the report.",
+  "expected_text": "Send the report.",
+  "expected_decision": "do_not_intervene"
+},
+{
+  "case_id": "case_014",
+  "description": "Known personal term with punctuation",
+  "memory": {
+    "spoken_form": "Rahit",
+    "preferred_form": "Rohit",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Email Rahit.",
+  "formatted_text": "Email Rahit.",
+  "expected_text": "Email Rohit.",
+  "expected_decision": "intervene"
+},
+{
+  "case_id": "case_015",
+  "description": "Completely unrelated word",
+  "memory": {
+    "spoken_form": "Rohit",
+    "preferred_form": "Rohit",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Send the document.",
+  "formatted_text": "Send the document.",
+  "expected_text": "Send the document.",
+  "expected_decision": "do_not_intervene"
+},
+{
+  "case_id": "case_016",
+  "description": "Two distinct known names in one sentence",
+  "memories": [
+    {
+      "spoken_form": "Rahit",
+      "preferred_form": "Rohit",
+      "context": "person name",
+      "language": "en"
+    },
+    {
+      "spoken_form": "Rohan",
+      "preferred_form": "Rohan",
+      "context": "person name",
+      "language": "en"
+    }
+  ],
+  "asr_text": "Ask Rahit about Rohan.",
+  "formatted_text": "Ask Rahit about Rohan.",
+  "expected_text": "Ask Rohit about Rohan.",
+  "expected_decision": "intervene"
+},
+{
+  "case_id": "case_017",
+  "description": "Exact known name should never be changed",
+  "memory": {
+    "spoken_form": "Aaditya",
+    "preferred_form": "Aaditya",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Email Aaditya today.",
+  "formatted_text": "Email Aaditya today.",
+  "expected_text": "Email Aaditya today.",
+  "expected_decision": "do_not_intervene"
+},
+{
+  "case_id": "case_018",
+  "description": "Weak similarity should not trigger memory",
+  "memory": {
+    "spoken_form": "Rohit",
+    "preferred_form": "Rohit",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Schedule a meeting.",
+  "formatted_text": "Schedule a meeting.",
+  "expected_text": "Schedule a meeting.",
+  "expected_decision": "do_not_intervene"
+},
+{
+  "case_id": "case_019",
+  "description": "Multiple words with one personal correction",
+  "memory": {
+    "spoken_form": "Rahit",
+    "preferred_form": "Rohit",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "Please ask Rahit to send the final report.",
+  "formatted_text": "Please ask Rahit to send the final report.",
+  "expected_text": "Please ask Rohit to send the final report.",
+  "expected_decision": "intervene"
+},
+{
+  "case_id": "case_020",
+  "description": "Known personal term embedded in longer sentence",
+  "memory": {
+    "spoken_form": "Rahit",
+    "preferred_form": "Rohit",
+    "context": "person name",
+    "language": "en"
+  },
+  "asr_text": "I told Rahit about the meeting yesterday.",
+  "formatted_text": "I told Rahit about the meeting yesterday.",
+  "expected_text": "I told Rohit about the meeting yesterday.",
+  "expected_decision": "intervene"
+}
+
+]
