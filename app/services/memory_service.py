@@ -1,7 +1,10 @@
-from sqlalchemy.orm import Session
-from rapidfuzz.fuzz import ratio
-from app.models import Memory, Observation
 from functools import lru_cache
+
+from rapidfuzz.fuzz import ratio
+from sqlalchemy.orm import Session
+
+from app.models import Memory, MemoryCandidate, Observation
+
 
 def normalize_text(text: str) -> str:
     """Normalize text for comparison."""
@@ -138,26 +141,17 @@ def find_candidates(
     db: Session,
     observed_form: str,
     limit: int = 5,
-) -> list[tuple[Memory, float, float, str]]:
+) -> list[tuple[Memory, float, float, str, bool]]:
     """
-    Find candidate memories using the strongest match across
-    the preferred form and previously observed forms.
-
-    Returns:
-        (memory, fuzzy_score, phonetic_score, matched_form)
+    Find candidate memories using fuzzy retrieval first, then
+    phonetic similarity only for the strongest fuzzy matches.
     """
 
     normalized_observed = normalize_text(observed_form)
 
-    candidates: list[tuple[Memory, float, float, str]] = []
-
-    # Load all memories once.
     memories = db.query(Memory).all()
-
-    # Load all observations once instead of querying inside the loop.
     observations = db.query(Observation).all()
 
-    # Group observations by memory_id.
     observations_by_memory: dict[int, list[str]] = {}
 
     for observation in observations:
@@ -166,15 +160,18 @@ def find_candidates(
             [],
         ).append(observation.observed_form)
 
+    # First pass: cheap fuzzy retrieval.
+    fuzzy_candidates: list[
+        tuple[Memory, float, str, bool]
+    ] = []
+
     for memory in memories:
         forms = [memory.preferred_form]
-
         forms.extend(
             observations_by_memory.get(memory.id, [])
         )
 
         best_fuzzy = 0.0
-        best_phonetic = 0.0
         best_form = ""
 
         for form in forms:
@@ -185,44 +182,63 @@ def find_candidates(
                 normalized_form,
             )
 
-            phonetic_score = phonetic_similarity(
-                normalized_observed,
-                normalized_form,
-                language=memory.language or "en-us",
-            )
-
-            combined_score = (
-                0.6 * fuzzy_score
-                + 0.4 * phonetic_score
-            )
-
-            best_score = (
-                0.6 * best_fuzzy
-                + 0.4 * best_phonetic
-            )
-
-            if combined_score > best_score:
+            if fuzzy_score > best_fuzzy:
                 best_fuzzy = fuzzy_score
-                best_phonetic = phonetic_score
                 best_form = form
 
-        best_similarity = (
-            0.6 * best_fuzzy
-            + 0.4 * best_phonetic
-        )
-
-        if best_similarity >= 50:
-            candidates.append(
+        if best_fuzzy >= 35:
+            fuzzy_candidates.append(
                 (
                     memory,
                     best_fuzzy,
-                    best_phonetic,
                     best_form,
                     has_observed_form(
                         observations,
                         memory.id,
                         observed_form,
                     ),
+                )
+            )
+
+    # Keep only the strongest fuzzy candidates before
+    # doing expensive phonetic comparisons.
+    fuzzy_candidates.sort(
+        key=lambda item: item[1],
+        reverse=True,
+    )
+
+    phonetic_pool = fuzzy_candidates[:20]
+
+    candidates: list[
+        tuple[Memory, float, float, str, bool]
+    ] = []
+
+    for (
+        memory,
+        fuzzy_score,
+        best_form,
+        direct_evidence,
+    ) in phonetic_pool:
+
+        phonetic_score = phonetic_similarity(
+            normalized_observed,
+            normalize_text(best_form),
+            language=memory.language or "en-us",
+        )
+
+        combined_score = (
+            0.6 * fuzzy_score
+            + 0.4 * phonetic_score
+        )
+
+        if combined_score >= 50:
+            candidates.append(
+                (
+                    memory,
+                    fuzzy_score,
+                    phonetic_score,
+                    best_form,
+                    direct_evidence,
                 )
             )
 
@@ -286,6 +302,76 @@ def learn_memory(
     return memory
 
 
+def promote_candidate(
+    db: Session,
+    candidate_id: int,
+) -> Memory:
+    candidate = (
+        db.query(MemoryCandidate)
+        .filter(MemoryCandidate.id == candidate_id)
+        .first()
+    )
+
+    if candidate is None:
+        raise ValueError("Candidate not found.")
+
+    if candidate.status == "promoted":
+        raise ValueError("Candidate is already promoted.")
+
+    # A candidate must have explicit confirmation before
+    # becoming trusted memory.
+    memory = find_existing_memory(
+        db,
+        candidate.possible_preferred_form,
+    )
+
+    if memory is None:
+        memory = Memory(
+            spoken_form=candidate.observed_form,
+            preferred_form=candidate.possible_preferred_form,
+            context=candidate.context,
+            language=candidate.language,
+            confidence=0.9,
+            evidence_count=candidate.evidence_count,
+        )
+        db.add(memory)
+        db.flush()
+    else:
+        memory.confidence = max(memory.confidence, 0.9)
+        memory.evidence_count += candidate.evidence_count
+
+    candidate.status = "promoted"
+
+    db.commit()
+    db.refresh(memory)
+
+    return memory
+
+
+def reject_candidate(
+    db: Session,
+    candidate_id: int,
+) -> MemoryCandidate:
+    candidate = (
+        db.query(MemoryCandidate)
+        .filter(MemoryCandidate.id == candidate_id)
+        .first()
+    )
+
+    if candidate is None:
+        raise ValueError("Candidate not found.")
+
+    if candidate.status == "promoted":
+        raise ValueError("Promoted candidates cannot be rejected.")
+
+    candidate.status = "rejected"
+
+    db.commit()
+    db.refresh(candidate)
+
+    return candidate
+
+
 def decide_memory_intervention(
     candidates: list[tuple[Memory, float, float, str, bool]], observed_form: str,
 ) -> dict:
@@ -301,18 +387,18 @@ def decide_memory_intervention(
             "reason": "No memory candidates found.",
         }
 
-    best_memory, best_fuzzy, best_phonetic, best_form, direct_evidence = candidates[0]
+    best_memory, best_fuzzy, best_phonetic, _ , direct_evidence = candidates[0]
 
     best_similarity = (
         0.6 * best_fuzzy
         + 0.4 * best_phonetic
     )
-    
+
     final_confidence = (
             0.7 * (best_similarity / 100)
             + 0.3 * best_memory.confidence
         )
-    
+
     if normalize_text(observed_form) == normalize_text(best_memory.preferred_form):
         return {
             "decision": "do_not_intervene",
@@ -325,7 +411,7 @@ def decide_memory_intervention(
             "reason": "Formatted text already matches the preferred form exactly.",
         }
 
-    
+
 
     # Basic similarity check.
     if best_similarity < 60:
@@ -357,13 +443,13 @@ def decide_memory_intervention(
     margin = None
 
     if len(candidates) >= 2:
-        second_memory, second_fuzzy, second_phonetic, second_form, second_direct_evidence = candidates[1]
+        _ , second_fuzzy, second_phonetic, _ , _ = candidates[1]
 
         second_similarity = (
             0.6 * second_fuzzy
             + 0.4 * second_phonetic
         )
-        
+
 
         margin = best_similarity - second_similarity
 
@@ -389,7 +475,7 @@ def decide_memory_intervention(
             "direct_evidence": direct_evidence,
             "reason": "Similarity is strong, but this observed form has not been learned as evidence for the memory.",
         }
-            
+
 
     return {
         "decision": "intervene",
@@ -404,10 +490,10 @@ def decide_memory_intervention(
             if direct_evidence
             else "Strong similarity to the stored preferred form."
         ),
-        
+
     }
 
-    
+
 from phonemizer import phonemize
 
 
@@ -419,4 +505,49 @@ def to_phonemes(text: str, language: str = "en-us") -> str:
         language=language,
         strip=True,
     )
+
+def learn_candidate(
+    db: Session,
+    observed_form: str,
+    possible_preferred_form: str,
+    context: str | None = None,
+    language: str | None = None,
+    evidence_type: str = "asr_formatted_substitution",
+) -> MemoryCandidate:
+    candidates = db.query(MemoryCandidate).all()
+    candidate = next(
+        (
+            existing
+            for existing in candidates
+            if normalize_text(existing.observed_form)
+            == normalize_text(observed_form)
+            and normalize_text(existing.possible_preferred_form)
+            == normalize_text(possible_preferred_form)
+        ),
+        None,
+    )
+
+
+    if candidate is None:
+        candidate = MemoryCandidate(
+            observed_form=observed_form,
+            possible_preferred_form=possible_preferred_form,
+            context=context,
+            language=language,
+            confidence=0.0,
+            importance=0.5,
+            risk_level="high",
+            evidence_count=1,
+            evidence_type=evidence_type,
+            evidence_source="observation",
+            status="candidate",
+        )
+        db.add(candidate)
+    else:
+        candidate.evidence_count += 1
+
+    db.commit()
+    db.refresh(candidate)
+
+    return candidate
 

@@ -28,6 +28,7 @@
       "trace": [
         {
           "observed_form": "Ask",
+          "formatted_form": "Ask",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -38,6 +39,7 @@
         },
         {
           "observed_form": "Rohit",
+          "formatted_form": "Rohit",
           "decision": "do_not_intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -48,6 +50,7 @@
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -58,6 +61,7 @@
         },
         {
           "observed_form": "send",
+          "formatted_form": "send",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -68,6 +72,7 @@
         },
         {
           "observed_form": "the",
+          "formatted_form": "the",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -78,6 +83,7 @@
         },
         {
           "observed_form": "report",
+          "formatted_form": "report",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -119,7 +125,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 460.594,
+      "latency_ms": 1040.437,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -151,6 +157,7 @@
       "trace": [
         {
           "observed_form": "Ask",
+          "formatted_form": "Ask",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -161,6 +168,7 @@
         },
         {
           "observed_form": "Rahit",
+          "formatted_form": "Rahit",
           "decision": "intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -171,6 +179,7 @@
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -181,6 +190,7 @@
         },
         {
           "observed_form": "send",
+          "formatted_form": "send",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -191,6 +201,7 @@
         },
         {
           "observed_form": "the",
+          "formatted_form": "the",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -201,6 +212,7 @@
         },
         {
           "observed_form": "report",
+          "formatted_form": "report",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -242,7 +254,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 5.306,
+      "latency_ms": 9.324,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -274,6 +286,7 @@
       "trace": [
         {
           "observed_form": "Send",
+          "formatted_form": "Send",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -284,6 +297,7 @@
         },
         {
           "observed_form": "it",
+          "formatted_form": "it",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -294,6 +308,7 @@
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -304,6 +319,7 @@
         },
         {
           "observed_form": "Aditya",
+          "formatted_form": "Aditya",
           "decision": "intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -335,7 +351,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 7.687,
+      "latency_ms": 4.971,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -356,6 +372,7 @@
       "trace": [
         {
           "observed_form": "Ask",
+          "formatted_form": "Ask",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -366,6 +383,7 @@
         },
         {
           "observed_form": "Rahul",
+          "formatted_form": "Rahul",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -376,6 +394,7 @@
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -386,6 +405,7 @@
         },
         {
           "observed_form": "send",
+          "formatted_form": "send",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -396,6 +416,7 @@
         },
         {
           "observed_form": "the",
+          "formatted_form": "the",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -406,6 +427,7 @@
         },
         {
           "observed_form": "report",
+          "formatted_form": "report",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -447,7 +469,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 7.237,
+      "latency_ms": 10.735,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -468,6 +490,7 @@
       "trace": [
         {
           "observed_form": "Ask",
+          "formatted_form": "Ask",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -478,6 +501,7 @@
         },
         {
           "observed_form": "Rohat",
+          "formatted_form": "Rohat",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -488,6 +512,7 @@
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -498,6 +523,7 @@
         },
         {
           "observed_form": "send",
+          "formatted_form": "send",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -508,6 +534,7 @@
         },
         {
           "observed_form": "the",
+          "formatted_form": "the",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -518,6 +545,7 @@
         },
         {
           "observed_form": "report",
+          "formatted_form": "report",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -559,7 +587,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 10.004,
+      "latency_ms": 9.105,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -580,6 +608,7 @@
       "trace": [
         {
           "observed_form": "Ask",
+          "formatted_form": "Ask",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -590,6 +619,7 @@
         },
         {
           "observed_form": "rohit",
+          "formatted_form": "rohit",
           "decision": "do_not_intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -600,6 +630,7 @@
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -610,6 +641,7 @@
         },
         {
           "observed_form": "call",
+          "formatted_form": "call",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -620,6 +652,7 @@
         },
         {
           "observed_form": "me",
+          "formatted_form": "me",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -656,7 +689,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 10.715,
+      "latency_ms": 6.645,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -688,6 +721,7 @@
       "trace": [
         {
           "observed_form": "Call",
+          "formatted_form": "Call",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -698,6 +732,7 @@
         },
         {
           "observed_form": "Rahit",
+          "formatted_form": "Rahit",
           "decision": "intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -708,6 +743,7 @@
         },
         {
           "observed_form": "tomorrow",
+          "formatted_form": "tomorrow",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -734,7 +770,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 7.125,
+      "latency_ms": 5.349,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -755,6 +791,7 @@
       "trace": [
         {
           "observed_form": "Call",
+          "formatted_form": "Call",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -765,6 +802,7 @@
         },
         {
           "observed_form": "Rakesh",
+          "formatted_form": "Rakesh",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -775,6 +813,7 @@
         },
         {
           "observed_form": "tomorrow",
+          "formatted_form": "tomorrow",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -801,7 +840,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 4.765,
+      "latency_ms": 6.998,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -822,6 +861,7 @@
       "trace": [
         {
           "observed_form": "Call",
+          "formatted_form": "Call",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -832,6 +872,7 @@
         },
         {
           "observed_form": "Rohan",
+          "formatted_form": "Rohan",
           "decision": "do_not_intervene",
           "memory_id": 2,
           "direct_evidence": true,
@@ -842,6 +883,7 @@
         },
         {
           "observed_form": "tomorrow",
+          "formatted_form": "tomorrow",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -868,7 +910,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 4.302,
+      "latency_ms": 5.518,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -910,6 +952,7 @@
       "trace": [
         {
           "observed_form": "Ask",
+          "formatted_form": "Ask",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -920,6 +963,7 @@
         },
         {
           "observed_form": "Rahit",
+          "formatted_form": "Rahit",
           "decision": "intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -930,6 +974,7 @@
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -940,6 +985,7 @@
         },
         {
           "observed_form": "send",
+          "formatted_form": "send",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -950,16 +996,18 @@
         },
         {
           "observed_form": "it",
+          "formatted_form": "it",
           "decision": "do_not_intervene",
           "memory_id": 1,
           "direct_evidence": false,
-          "confidence": 0.55,
-          "similarity_score": 57.14,
+          "confidence": 0.53,
+          "similarity_score": 54.29,
           "margin": null,
           "reason": "Similarity is too weak."
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -970,6 +1018,7 @@
         },
         {
           "observed_form": "Aditya",
+          "formatted_form": "Aditya",
           "decision": "intervene",
           "memory_id": 2,
           "direct_evidence": true,
@@ -1016,7 +1065,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 6.12,
+      "latency_ms": 13.375,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1037,6 +1086,7 @@
       "trace": [
         {
           "observed_form": "Call",
+          "formatted_form": "Call",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1047,6 +1097,7 @@
         },
         {
           "observed_form": "Mohit",
+          "formatted_form": "Mohit",
           "decision": "do_not_intervene",
           "memory_id": 1,
           "direct_evidence": false,
@@ -1057,6 +1108,7 @@
         },
         {
           "observed_form": "tomorrow",
+          "formatted_form": "tomorrow",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1083,7 +1135,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 7.187,
+      "latency_ms": 5.533,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1115,6 +1167,7 @@
       "trace": [
         {
           "observed_form": "Ask",
+          "formatted_form": "Ask",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1125,6 +1178,7 @@
         },
         {
           "observed_form": "Aditya",
+          "formatted_form": "Aditya",
           "decision": "intervene",
           "memory_id": 1,
           "direct_evidence": false,
@@ -1135,6 +1189,7 @@
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1145,6 +1200,7 @@
         },
         {
           "observed_form": "review",
+          "formatted_form": "review",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1155,6 +1211,7 @@
         },
         {
           "observed_form": "it",
+          "formatted_form": "it",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1191,7 +1248,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 7.358,
+      "latency_ms": 6.02,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1212,6 +1269,7 @@
       "trace": [
         {
           "observed_form": "Send",
+          "formatted_form": "Send",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1222,6 +1280,7 @@
         },
         {
           "observed_form": "the",
+          "formatted_form": "the",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1232,6 +1291,7 @@
         },
         {
           "observed_form": "report",
+          "formatted_form": "report",
           "decision": "do_not_intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -1258,7 +1318,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 2.721,
+      "latency_ms": 4.124,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1290,6 +1350,7 @@
       "trace": [
         {
           "observed_form": "Email",
+          "formatted_form": "Email",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1300,6 +1361,7 @@
         },
         {
           "observed_form": "Rahit",
+          "formatted_form": "Rahit",
           "decision": "intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -1321,7 +1383,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 4.718,
+      "latency_ms": 4.177,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1342,6 +1404,7 @@
       "trace": [
         {
           "observed_form": "Send",
+          "formatted_form": "Send",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1352,6 +1415,7 @@
         },
         {
           "observed_form": "the",
+          "formatted_form": "the",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1362,6 +1426,7 @@
         },
         {
           "observed_form": "document",
+          "formatted_form": "document",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1388,7 +1453,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 3.851,
+      "latency_ms": 3.422,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1420,6 +1485,7 @@
       "trace": [
         {
           "observed_form": "Ask",
+          "formatted_form": "Ask",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1430,6 +1496,7 @@
         },
         {
           "observed_form": "Rahit",
+          "formatted_form": "Rahit",
           "decision": "intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -1440,6 +1507,7 @@
         },
         {
           "observed_form": "about",
+          "formatted_form": "about",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1450,6 +1518,7 @@
         },
         {
           "observed_form": "Rohan",
+          "formatted_form": "Rohan",
           "decision": "do_not_intervene",
           "memory_id": 2,
           "direct_evidence": true,
@@ -1481,7 +1550,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 6.769,
+      "latency_ms": 7.681,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1502,6 +1571,7 @@
       "trace": [
         {
           "observed_form": "Email",
+          "formatted_form": "Email",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1512,6 +1582,7 @@
         },
         {
           "observed_form": "Aaditya",
+          "formatted_form": "Aaditya",
           "decision": "do_not_intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -1522,6 +1593,7 @@
         },
         {
           "observed_form": "today",
+          "formatted_form": "today",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1548,7 +1620,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 2.583,
+      "latency_ms": 4.24,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1569,6 +1641,7 @@
       "trace": [
         {
           "observed_form": "Schedule",
+          "formatted_form": "Schedule",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1579,6 +1652,7 @@
         },
         {
           "observed_form": "a",
+          "formatted_form": "a",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1589,6 +1663,7 @@
         },
         {
           "observed_form": "meeting",
+          "formatted_form": "meeting",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1615,7 +1690,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 7.918,
+      "latency_ms": 6.109,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1647,6 +1722,7 @@
       "trace": [
         {
           "observed_form": "Please",
+          "formatted_form": "Please",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1657,6 +1733,7 @@
         },
         {
           "observed_form": "ask",
+          "formatted_form": "ask",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1667,6 +1744,7 @@
         },
         {
           "observed_form": "Rahit",
+          "formatted_form": "Rahit",
           "decision": "intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -1677,6 +1755,7 @@
         },
         {
           "observed_form": "to",
+          "formatted_form": "to",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1687,6 +1766,7 @@
         },
         {
           "observed_form": "send",
+          "formatted_form": "send",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1697,6 +1777,7 @@
         },
         {
           "observed_form": "the",
+          "formatted_form": "the",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1707,6 +1788,7 @@
         },
         {
           "observed_form": "final",
+          "formatted_form": "final",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1717,6 +1799,7 @@
         },
         {
           "observed_form": "report",
+          "formatted_form": "report",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1768,7 +1851,7 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 12.123,
+      "latency_ms": 10.682,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
@@ -1800,6 +1883,7 @@
       "trace": [
         {
           "observed_form": "I",
+          "formatted_form": "I",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1810,6 +1894,7 @@
         },
         {
           "observed_form": "told",
+          "formatted_form": "told",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1820,6 +1905,7 @@
         },
         {
           "observed_form": "Rahit",
+          "formatted_form": "Rahit",
           "decision": "intervene",
           "memory_id": 1,
           "direct_evidence": true,
@@ -1830,6 +1916,7 @@
         },
         {
           "observed_form": "about",
+          "formatted_form": "about",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1840,6 +1927,7 @@
         },
         {
           "observed_form": "the",
+          "formatted_form": "the",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1850,6 +1938,7 @@
         },
         {
           "observed_form": "meeting",
+          "formatted_form": "meeting",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1860,6 +1949,7 @@
         },
         {
           "observed_form": "yesterday",
+          "formatted_form": "yesterday",
           "decision": "do_not_intervene",
           "memory_id": null,
           "direct_evidence": false,
@@ -1906,14 +1996,14 @@
           "match": "exact"
         }
       ],
-      "latency_ms": 9.803,
+      "latency_ms": 12.099,
       "model_calls": 0,
       "embedding_calls": 0,
       "estimated_cost": 0.0
     }
   ],
-  "average_latency_ms": 29.444,
-  "p95_latency_ms": 460.594,
+  "average_latency_ms": 58.827,
+  "p95_latency_ms": 1040.437,
   "model_calls": 0,
   "embedding_calls": 0,
   "estimated_cost": 0.0

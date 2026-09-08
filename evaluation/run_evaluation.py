@@ -1,9 +1,7 @@
-import json
-import time
 import argparse
-from pathlib import Path
-
+import json
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -11,7 +9,6 @@ from app.database import SessionLocal
 from app.models import Memory, Observation
 from app.services.formatting_service import format_with_memory
 from app.services.memory_service import learn_memory
-
 
 BASE_DIR = Path(__file__).resolve().parent
 DEFAULT_CASES_FILE = BASE_DIR / "cases.json"

@@ -7,7 +7,6 @@ from app.models import Memory, Observation
 from app.services.formatting_service import format_with_memory
 from app.services.memory_service import learn_memory
 
-
 BASE_DIR = Path(__file__).resolve().parent
 CASES_FILE = BASE_DIR / "test_cases.json"
 RESULTS_FILE = BASE_DIR / "results.json"

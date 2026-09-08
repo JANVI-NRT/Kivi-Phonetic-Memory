@@ -65,6 +65,29 @@ async function loadMemories() {
     `).join("");
 }
 
+async function loadCandidates() {
+    const response = await fetch("/candidates");
+    const candidates = await response.json();
+
+    const container = document.getElementById("candidate-list");
+
+    if (candidates.length === 0) {
+        container.innerHTML = "<p>No candidates yet.</p>";
+        return;
+    }
+
+    container.innerHTML = candidates.map(candidate => `
+        <div class="memory-card">
+            <strong>${candidate.observed_form} → ${candidate.possible_preferred_form}</strong>
+            <div>Evidence: ${candidate.evidence_type}</div>
+            <div>Confidence: ${candidate.confidence}</div>
+            <div>Evidence count: ${candidate.evidence_count}</div>
+            <div>Status: ${candidate.status}</div>
+        </div>
+    `).join("");
+}
+
+
 
 async function formatText() {
     const asrText = document.getElementById("asrText").value;
@@ -148,4 +171,5 @@ async function resetMemories() {
 
 window.addEventListener("DOMContentLoaded", () => {
     loadMemories();
+    loadCandidates();
 });

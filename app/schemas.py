@@ -6,7 +6,7 @@ class MemoryCreate(BaseModel):
     preferred_form: str = Field(min_length=1, max_length=255)
     context: str | None = None
     language: str | None = None
-    
+
 class ObservationCreate(BaseModel):
     observed_form: str = Field(min_length=1, max_length=255)
     preferred_form: str = Field(min_length=1, max_length=255)
