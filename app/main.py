@@ -129,6 +129,7 @@ def reset_memories(
     db: Session = Depends(get_db),
 ):
     db.query(Observation).delete()
+    db.query(MemoryCandidate).delete()
     db.query(Memory).delete()
     db.commit()
 
