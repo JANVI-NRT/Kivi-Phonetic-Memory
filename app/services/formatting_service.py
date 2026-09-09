@@ -108,11 +108,25 @@ def extract_candidate_pairs(alignment: list[dict]) -> list[dict]:
 
     return pairs
 
+def format_basic_text(text: str) -> str:
+    text = " ".join(text.strip().split())
+
+    if not text:
+        return text
+
+    text = text[0].upper() + text[1:]
+
+    if text[-1] not in ".!?":
+        text += "."
+
+    return text
+
 def format_with_memory(
     db: Session,
     asr_text: str,
     formatted_text: str,
 ) -> dict:
+    formatted_text = format_basic_text(formatted_text)
     """
     Apply trusted personal memories to the formatted text.
 
